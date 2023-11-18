@@ -48,7 +48,7 @@ const scanDirectoryStructure = async (
   directoryCallback: EntryCallback = async () => Promise.resolve({})
 ): Promise<ResultInterface> => {
   const results = [] as ResultInterface;
-  const baseDir = path.join(__dirname, dir);
+  const baseDir = path.join(process.cwd(), dir);
 
   const recursiveScan = async (
     currentPath: string,
