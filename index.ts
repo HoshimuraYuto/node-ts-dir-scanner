@@ -36,11 +36,9 @@ interface File {
 }
 
 interface EntryCallback {
-  (
-    entry: fs.Dirent,
-    entryPath: string,
-    relativePath: string
-  ): Promise<AdditionalAttributes>;
+  (entry: fs.Dirent, entryPath: string, relativePath: string):
+    | Promise<AdditionalAttributes>
+    | AdditionalAttributes;
 }
 
 const scanDirectoryStructure = async (
